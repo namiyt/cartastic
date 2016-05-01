@@ -1,7 +1,7 @@
 <?php
-    $server_name = "sylvester-mccoy-v3.ics.uci.edu";
-    $username = "inf124grp04";
-    $password = "rePesE*5";
+    $server_name = "";
+    $username = "";
+    $password = "";
 
     // Create connection    
     try {
