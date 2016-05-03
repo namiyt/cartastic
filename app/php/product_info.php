@@ -1,5 +1,7 @@
 <?php
 require 'database.php';
+require 'form.php';
+
 $url = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/{$_SERVER['REQUEST_URI']}";
 
 $product_page = substr($url,54,55);
@@ -105,7 +107,43 @@ $spec = $p_spec->fetch(PDO::FETCH_ASSOC);
                 </tr>
             </table>
         </div>
+        <div id="order">
+            <form action="../php/form.php" method="POST" name="OrderForm">
+                <label>Full Name</label>
+                <input type="text" name="name">
+                <label>Phone Number</label>
+                <input type="text" name="phone">
+                <label>Email</label>
+                <input type="email" name="email">
+                <label>Shipping Address</label>
+                <input type="text" name="shipto">
+                <label>Billing Address</label>
+                <input type="text" name="billto">
+                <label>Credit-Card Type</label>
+                <select name="cardtype">
+                    <option value="Visa">Visa</option>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="American Express">American Express</option>
+                    <option value="Discover">Discover</option>
+                </select>
+                <label>Credit-Card Number</label>
+                <input type="text" name="ccid">
+                <label>Shipping Method</label>
+                <select name="shipmethod">
+                    <option value="Overnight">Overnight</option>
+                    <option value="2-day Express">2-Day Express</option>
+                    <option value="6-day Ground">6-Day Ground</option>
+                </select>
+                <label>City</label>
+                <input type="text" name="city">
+                <label>State</label>
+                <input type="text" name="state">
+                <?php echo "<input type='hidden' name='pid' value='".$info['id']."'>" ?>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </section>
+
 
     <!-- SCRIPT LINKS -->
     <script src="../js/script.js"></script>
