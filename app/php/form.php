@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (strlen($zipcode) != 5) {
         array_push($error, "Invalid zip-code format");
     }
-
+    
     $test = $conn->query($query);
     if ($test == false) {
         array_push($error,"Shipping Address does not exist.");
