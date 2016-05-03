@@ -138,6 +138,8 @@ $spec = $p_spec->fetch(PDO::FETCH_ASSOC);
                 <input type="text" name="city">
                 <label>State</label>
                 <input type="text" name="state">
+                <label>Zip Code</label>
+                <input type="text" name="zipcode">
                 <?php echo "<input type='hidden' name='pid' value='".$info['id']."'>" ?>
                 <input type="submit" value="Submit">
             </form>
